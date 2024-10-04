@@ -1,0 +1,52 @@
+.c-logo {
+    font-weight: bold;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+  }
+  .navbar-toggler{
+    background-color: #ffffff; 
+  }
+  .navbar-toggler:hover{
+    border-color: rgb(6, 6, 163) !important;
+    background-color: #a99f9c;
+  }
+  .navbar{
+    background-color: #343a40;
+  }
+  
+  
+  .bg-image {
+    background-image: url("../../../assets/back_img.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .mask-custom {
+    backdrop-filter: blur(1px);
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  .nav-item a {
+    list-style: none;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: 0 20px;
+    color:#ffffff;
+    font-size: large;
+  }
+  a {
+    transition: transform 0.2s ease-out; 
+  }
+  
+  a:hover {
+    transform: scale(1.5); 
+  }
+  .submit-btn{
+    font-weight: bold;
+  
+  }
+  
+  .submit-btn:hover {
+    color: white !important;
+    background-color:#427bbd ;
+  }
+  

@@ -1,0 +1,32 @@
+.bg-img{
+  background-image: url('https://images.pexels.com/photos/1166643/pexels-photo-1166643.jpeg?auto=compress&cs=tinysrgb&w=600');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.card {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+      rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+      rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  }
+  .card {
+    padding: 3rem;
+    margin-top: 20px;
+  }
+  .signup-btn {
+    display: flex;
+    margin: 0 auto;
+  }
+  .signup-link {
+    text-decoration: none;
+  }
+  .signup-link:hover {
+    font-size: 20px;
+  }
+  .loader-container {
+    margin: 110px 0;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    height: 100h;             
+  }

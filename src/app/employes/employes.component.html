@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-end  m-5 ">
+    <button class="btn btn-outline-dark rounded-pill" type="button" (click)="opModal()">Add Employee</button>
+    <button class="btn btn-outline-dark rounded-pill" type="button" (click)="fetchEmp()">Fetch Employee</button>
+</div>
+<div class="container-fluid">
+    <div class="row mt-5" >  
+        <div class="col-lg-12"  >
+                   <table class="table table-responsive table-hover" >
+                    <thead class="">
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Gender</th>
+                            <th>Experience</th>
+                            <th>Skills </th> 
+                            <th>Address </th> 
+                            <th>modify </th> 
+                             
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let item of allEmployees; let i = index ">
+                        <tr style="border: 1px solid rgb(66, 65, 65);">
+                            <td>{{i+1}}</td>
+                            <td> {{item.firstname +" "+ item.lastname}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.gender}}</td>
+                            <td>{{item.experience}}</td>
+                            <td>{{item.skills}}</td>
+                            <td>{{item.street + item.city}} </td>
+                            <td><button class="btn e-btn" type="button" routerLink="create-task"> <i class="bi bi-info-circle-fill"></i></button>
+                            <button class="btn e-btn mx-2" type="button" ><i class="bi bi-pencil-square"></i></button>
+                            <button class="btn e-btn" type="button" routerLink="create-task"><i class="bi bi-trash3-fill"></i></button></td>
+                    </tbody>
+                   </table>
+                </div>
+                
+            </div>
+</div>
+<div class="add-emp">
+<app-add-employe></app-add-employe>
+</div>
+
+<!-- <h5 class="card-title">{{item.firstname +" "+ item.lastname}}</h5>
+<hr>
+<p><b>Email:</b>{{item.email}}</p>
+<p><b>Skills: </b>{{item.skills}} </p>
+<p><b>Gender:</b>{{item.gender}} </p>
+<p><b>Experience:</b>{{item.experience}} </p>
+<p><b>Address:</b>{{item.street + item.city}}  </p>
+
+<div class="footer d-flex justify-content-end">
+   >
+</div>  -->

@@ -1,0 +1,64 @@
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBack" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Update Task</h1>
+          <button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+       <form [formGroup]="taskForm" (ngSubmit)="taskForm">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 modal-feild">
+                <label for="title">Title <span>*</span></label>
+                <input type="text" class="form-control" id="title" name="title" formControlName="title">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 modal-feild">
+                <label for="discp">Discription <span>*</span></label>
+               <textarea class="form-control" name="discp" id="discp" rows="3" formControlName="discription"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 modal-feild">
+                <label for="assign">Assigned To <span>*</span></label>
+                <input type="text" class="form-control" name="assign" id="assign" formControlName="assTo">
+              </div>
+              <div class="col-md-6 col-sm-6 modal-feild">
+                <label for="date">Created Date <span>*</span></label>
+                <input type="date" class="form-control" name="date" id="date" formControlName="cDate">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 modal-feild">
+                <label for="prior">Priorty <span>*</span></label>
+                <select class="form-control"  formControlName="priority"  name="prior" id="prior">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                  <option value="critical">Critical</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-sm-6 modal-feild">
+                <label for="status">Status <span>*</span></label>
+                <select class=" custom-select form-control" formControlName="status" name="status" id="status"> 
+                  <option value="open">Open</option>
+                  <option value="started">Started</option>
+                  <option value="progress">Progress</option>
+                  <option value="complete">Complete</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary w-50" data-bs-dismiss="modal" (click)="onUpdate(taskForm.value)" [disabled]="taskForm.invalid">Update Task</button>
+        </div>
+       </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,26 @@
+.cont{
+    background-color: #f3eae5;
+}
+.card {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  .card {
+    padding: 4rem;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  input.ng-touched.ng-invalid {
+    border: 1px solid red;
+  }
+  small {
+    color: red;
+  }
+  .loader-container {
+    margin: 110px 0;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    height: 100h;             
+  }
+  

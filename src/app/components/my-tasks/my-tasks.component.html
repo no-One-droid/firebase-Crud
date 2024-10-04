@@ -1,0 +1,34 @@
+
+<div class="container mt-4">
+    <div class="d-flex  justify-content-end">
+        <button class="btn btn-dark submit-btn rounded-pill mx-2"  type="button" (click)="fetchTasks()" >
+            Fetch Task
+          </button>
+        <button class="btn btn-dark submit-btn rounded-pill mx-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" >
+          Create Task
+        </button>
+       
+      </div>
+    <div class="row mt-5" >  
+        <div class="col-lg-3 mb-3" *ngFor="let item of allTasks" >
+            <div class="card" [ngClass]="'card-' + item.status">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.title}}</h5>
+                    <hr>
+                    <p><b>Assigned to:</b>{{item.assTo}}</p>
+                    <p><b>Priority:</b>{{item.priority}} </p>
+                    <p><b>Status: </b>{{item.status}} </p>
+                    <div class="footer d-flex justify-content-end">
+                        <button class="btn e-btn" type="button" routerLink="create-task" (click)="onDelete(item.id)"> <i class="bi bi-info-circle-fill"></i></button>
+                        <button class="btn e-btn mx-2" type="button" (click)="onUpdate(item.id)" data-bs-toggle="modal" data-bs-target="#staticBack"><i class="bi bi-pencil-square"></i></button>
+                        <button class="btn e-btn" type="button" routerLink="create-task" (click)="onDelete(item.id)"><i class="bi bi-trash3-fill"></i></button>
+                    </div> 
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<app-update-task [setTask]="taskId" ></app-update-task>
+<app-create-task ></app-create-task>
+

@@ -1,0 +1,10 @@
+.add-emp{
+    height: 100%;
+}
+.card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+button{
+    border: 1px solid rgb(66, 65, 65);
+}
+

@@ -1,0 +1,9 @@
+.btn-floating {
+    transition: transform 0.2s ease-out;
+
+  }
+  
+  .btn-floating:hover {
+    transform: scale(1.5);
+  
+  }

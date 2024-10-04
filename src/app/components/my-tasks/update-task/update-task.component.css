@@ -1,0 +1,15 @@
+.modal-feild{
+    margin-bottom: 20px;
+}
+.modal-feild label{
+    margin-bottom: 7px;
+}
+.modal-feild span{
+    color: red;
+}
+input.ng-touched.ng-invalid{
+    border:1px solid red;
+}
+.btn{
+    margin: 0 auto;
+}

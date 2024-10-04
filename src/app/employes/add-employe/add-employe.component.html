@@ -1,0 +1,108 @@
+
+
+  <!-- <button class="btn btn-outline-dark" type="button" (click)="openModal()">Add Employe</button> -->
+  <!-- Modal -->
+ 
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h2 class="modal-title">ADD EMPLOYE</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" (click)="closeModal()"></button>
+        </div>
+  
+        <form [formGroup]="createEmpl" (ngSubmit)="createEmpl">
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6 modal-feild">
+                    <label for="fname">First Name <span>*</span></label>
+                    <input type="text" class="form-control" id="fname" name="fname" formControlName="firstname">
+                    <div *ngIf="fc['firstname'].touched && fc['firstname'].invalid">
+                      <small *ngIf="fc['firstname'].errors?.['required'] ">
+                          First Name is required
+                      </small>
+                    </div>
+                  </div>
+                  <div class="col-md-6 modal-feild">
+                    <label for="lname">Last Name <span>*</span></label>
+                    <input type="text" class="form-control" name="lname" id="lname"formControlName="lastname">
+                    <div *ngIf="fc['lastname'].touched && fc['lastname'].invalid">
+                      <small *ngIf="fc['lastname'].errors?.['required'] ">
+                          Last Name is required
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-sm-12 modal-feild">
+                    <label for="email">Email<span>*</span></label>
+                    <input type="text" class="form-control" name="email" id="email" formControlName="email">
+                    <div *ngIf="fc['email'].touched && fc['email'].invalid">
+                      <small *ngIf="fc['email'].errors?.['required'] ">
+                          Email is required
+                      </small>
+                      <small *ngIf="fc['email'].errors?.['email']">
+                        Email is not valid
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12 modal-feild d-flex flex-wrap justify-content-around align-items-center mt-1 mb-0">
+                    <label class="form-label">Gender<span>*</span></label>
+                      <div *ngFor="let myFormData of Gender">
+                        <div class="form-check form-check-inline ">
+                          <input
+                            type="radio"
+                            [id]="myFormData.id"
+                            [value]="myFormData.value"
+                            name="gender"
+                            formControlName="gender"
+                          />
+                          <label [for]="myFormData.id">{{ myFormData.display }}</label>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12 modal-feild">
+                    <label for="dob">Date of Birth<span>*</span></label>
+                    <input type="date" class="form-control"  name="dob" id="dob" formControlName="dOb">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12 modal-feild">
+                    <label for="city">City <span>*</span></label>
+                    <input type="text" class="form-control" name="city" id="city" formControlName="city">
+                  </div>
+                  <div class="col-md-6 col-sm-6 modal-feild">
+                    <label for="street">street <span>*</span></label>
+                    <input type="text" class="form-control" name="street" id="street" formControlName="street">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 col-sm-12 modal-feild">
+                    <label for="skills">Skills <span>*</span></label>
+                    <select class="form-control"  formControlName="skills"  name="skills" id="skills">
+                      <option value="low">FrontEnd Developer</option>
+                      <option value="medium">Sql Engineer</option>
+                      <option value="high">Backend Developer</option>
+                      <option value="critical">Designer</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 col-sm-12 modal-feild">
+                    <label for="experience">experience <span>*</span></label>
+                    <input type="experience" class="form-control" name="experience" id="experience" formControlName="experience">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary w-50" data-bs-dismiss="modal" (click)="onSubmit(createEmpl.value)" [disabled]="createEmpl.invalid">Create Task</button>
+            </div>
+           </form>
+  
+      </div>
+    </div>
+  </div>
